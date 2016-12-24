@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
+  "name": "SoftwareI",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/araymoises/ProyectoSoftwareI",
   "keywords": [
     "Electron",
     "quick",
