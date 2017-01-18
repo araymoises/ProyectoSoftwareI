@@ -14,7 +14,11 @@
   
 4) Instalar y ejecutar las dependencias, mediante npm:
 
-	$ npm install && npm start
+	$ npm install
+	
+4) Ejecutar el proyecto:
+
+	$ node app
 
 #
 -----*Pasos subir tu actualización al repositorio:*-----
