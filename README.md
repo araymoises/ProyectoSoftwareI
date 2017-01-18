@@ -35,7 +35,7 @@
 
 Nota: En caso de que trates de subir un archivo que no existía antes en el repositorio, debes usar el comando "git add -A".
 
-
+#
 -----*Puntos a tratar:*-----
 
 1. El grupo Front-end trabajará mayormente en la carpeta resources.
