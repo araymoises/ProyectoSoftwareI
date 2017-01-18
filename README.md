@@ -2,7 +2,7 @@
 
 -----*Pasos para instalar el proyecto:*-----
 
-1) Asegurarse de tener instalado el paquete de comandos Git.
+1) Asegurarse de tener instalado Nodejs y el paquete de comandos Git.
 
 2) Clonar este repositorio en la carpeta que desees: 
 
