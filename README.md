@@ -21,7 +21,7 @@
 	$ node app
 
 #
------*Pasos subir tu actualización al repositorio:*-----
+-----*Pasos para subir tu actualización al repositorio:*-----
 
 1) Armar la sentencia:
 
@@ -33,7 +33,9 @@
 
 	$ git push origin master
 
-	
+Nota: En caso de que trates de subir un archivo que no existía antes en el repositorio, debes usar el comando "git add -A".
+
+
 -----*Puntos a tratar:*-----
 
 1. El grupo Front-end trabajará mayormente en la carpeta resources.
