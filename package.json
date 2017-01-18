@@ -1,25 +1,17 @@
 {
-  "name": "SoftwareI",
+  "name": "software_uneg",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "app.js",
   "scripts": {
-    "start": "electron ."
+    "test": "echo \"Error: No se ha especificado una prueba\" && exit 1"
   },
-  "repository": "https://github.com/araymoises/ProyectoSoftwareI",
-  "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
-  ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^1.4.1"
-  },
+  "author": "Sección 1",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.14.0"
+    "bootstrap": "^4.0.0-alpha.6",
+    "ejs": "^2.5.5",
+    "express": "^4.14.0",
+    "express-validator": "^3.1.2"
   }
 }

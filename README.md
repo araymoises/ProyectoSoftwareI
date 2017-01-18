@@ -28,3 +28,8 @@
 2) Subir los archivos que se editaron:
 
 	$ git push origin master
+
+	
+-----*Puntos a tratar:*-----
+
+1. El grupo Front-end trabajará mayormente en la carpeta resources.
