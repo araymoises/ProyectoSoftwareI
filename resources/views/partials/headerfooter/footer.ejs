@@ -1,2 +1,26 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script>
+$(document).ready(function(){
+  $('#login').on('click', function(e){
+    e.preventDefault();
+    $.ajax({
+            url: "http://localhost:3000/db",
+            type: "POST",
+            // contentType: "application/json",
+            // data: JSON.stringify({
+            //     "title"    : 'Hola',
+            // }),
+            success: function(data){
+              alert(data+"h");
+            },
+            error: function(xhr, status, err){
+              alert("Error");
+                console.log(err);
+            }
+        });
+  });
+});
+</script>
 </body>
 </html>
