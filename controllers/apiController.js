@@ -52,7 +52,7 @@ var del = function(req, res){
     Api.findById(req.params.id,function(err,api){
       if(err){
         res.status(500);
-        res.send("Error Update.");
+        res.send("Error de actualización.");
       }
       else{
 
