@@ -55,13 +55,11 @@ var del = function(req, res){
         res.send("Error de actualización.");
       }
       else{
-
-        var api;
-        api.title = req.body.title;
+        var api = new Api(req.body);
         api.save(function(err){
           if(err){
             res.status(500);
-            res.send("Error al añadir.");
+            res.send("Error al añadir la actualización.");
           }
           else{
             res.status(200);
@@ -76,11 +74,11 @@ var del = function(req, res){
     Api.findById(req.params.id,function(err,api){
       if(err){
         res.status(500);
-        res.send("Error.");
+        res.send("No encontrado.");
       }
       else{
-        res.status(200);
-        res.send(api);
+          res.status(200);
+          res.send(api);
       }
     });
   };
