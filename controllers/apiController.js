@@ -1,14 +1,14 @@
-var api = require('./../models/apiModel');
+var Api = require('./../models/apiModel');
 
 var get = function(req, res){
-  api.find(function(err, api){
+  Api.find(function(err, Api){
     if(err){
       res.status(500);
       res.send("Error del servidor.");
     }
     else{
       res.status(200);
-      res.send(api);
+      res.send(Api);
     }
   });
 };

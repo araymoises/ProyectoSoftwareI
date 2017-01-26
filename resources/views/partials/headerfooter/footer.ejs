@@ -5,14 +5,14 @@ $(document).ready(function(){
   $('#login').on('click', function(e){
     e.preventDefault();
     $.ajax({
-            url: "http://localhost:3000/db",
+            url: "http://localhost:3000/api",
             type: "POST",
-            // contentType: "application/json",
-            // data: JSON.stringify({
-            //     "title"    : 'Hola',
-            // }),
+            contentType: "application/json",
+            data: JSON.stringify({
+                title    : 'Hosacdasdcasdasla',
+            }),
             success: function(data){
-              alert(data+"h");
+              alert(data.title);
             },
             error: function(xhr, status, err){
               alert("Error");

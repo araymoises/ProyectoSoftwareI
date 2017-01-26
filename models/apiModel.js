@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var apiModel = new Schema ({
-  title:String
+  "title":String
 });
 // apiModel.push({
 //   tittle: 'Hola'
