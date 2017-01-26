@@ -15,6 +15,9 @@ app.listen(3000, function(req){
 });
 
 app.use('/api', apiRouter);
+app.get('/api/:title', function(req,res){
+  res.send(req.params.name);
+});
 
 app.use('/', function(req,res){
   res.render('index',{
