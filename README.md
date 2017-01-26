@@ -16,7 +16,11 @@
 
 	$ npm install
 
-4) Ejecutar el proyecto:
+5) Ejecutar el servidor mongo:
+
+	$ mongod
+
+6) Y en otra consola, ejecutar el proyecto:
 
 	$ node app
 
