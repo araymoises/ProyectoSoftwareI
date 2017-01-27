@@ -7,7 +7,9 @@ var personaModel = new Schema ({
   "cedula"  :String,
   "nombre"  :String,
   "apellido":String,
+  "sexo"    :Boolean,
   "tipo_P"  :String,
+  "blocked" :Boolean
 });
 
 module.exports = mongoose.model("Persona", personaModel);

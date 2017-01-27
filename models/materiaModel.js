@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 var materiaModel = new Schema ({
   "id"     :String,
-  "nombre":String,
+  "nombre":String
 });
 
 module.exports = mongoose.model("Materia", materiaModel);

@@ -6,7 +6,7 @@ var puertaModel = new Schema ({
   "id"     :String,
   "persona":String,
   "hora"   :String,
-  "tipo_ES":Boolean,
+  "tipo_ES":Boolean
 });
 
 module.exports = mongoose.model("Puerta", puertaModel);
