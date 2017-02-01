@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var materiaModel = new Schema ({
-  "id"     :String,
+  "id"    :String,
   "nombre":String
 });
 

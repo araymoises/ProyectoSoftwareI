@@ -2,11 +2,15 @@ var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
-var horarioModel = new Schema ({
-  "materia":String,
+var bloqueModel = new Schema ({
   "dia"    :String,
   "inicioH":Date,
   "finalH" :Date
+});
+
+var horarioModel = new Schema ({
+  "materia":String,
+  "bloque" :[bloqueModel]
 });
 
 module.exports = mongoose.model("Horario", horarioModel);
