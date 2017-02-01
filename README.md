@@ -29,9 +29,13 @@
 -----*Cómo usar la API REST:*-----
 
 GET: http://localhost:3000/api //Devuelve todo lo contenido en la "tabla" api.
+
 POST: http://localhost:3000/api/ //Inserta una nueva tupla en la api.
+
 GET: http://localhost:3000/api/id=dfdsfdsfsdfcdsf //Devuelve la "tupla" en donde se encuentra tal id.
+
 PUT: http://localhost:3000/api/id=djhcanxdhasd //Actualiza una tupla en la api.
+
 DELETE: http://localhost:3000/api/id=djahcadascdnxdh //Elimina una tupla en la api.
 
 #
