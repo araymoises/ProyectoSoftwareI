@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+  <html>
+
+    <head>
+    	<title>Centinela</title>
+    	<link rel="shortcut icon" type="image/x-icon" href="icons/LOGO_UNEG.ico">
+    	<meta name="author" content="Centinela Team Frond-End">
+		<meta name="description" content="Centinela">
+    	<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+	    <!--Import materialize.css-->
+	    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+
+	    <link rel="styleSheet" href="../css/styleacceso.css" type="text/css">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    </head>
+
+    <body>
+
+		 <nav>
+		    <div class="nav-wrapper grey darken-4">
+		      <a href="#" class="brand-logo center">Verificar Identidad</a>
+		      
+		    </div>
+		  </nav>
+
+		<div class="container">
+			<div> <br><br></div>
+
+			<div class="row">
+				
+				<div class="col s6">
+					<div class="card">
+					        <div class="card-image">
+					        	<br><br><br>
+					          <img src="../images/identification-manual.png">
+					          <br>
+					          <span class="card-title">Manual</span>
+					          <a href="#manual" class="btn-floating halfway-fab waves-effect waves-light deep-orange"><i class="material-icons">dialpad</i></a>
+					        </div>
+					        <div class="card-content">
+					          <p>Introduzca solo el numero de identificacion de la persona.</p>
+					          <br>
+					        </div>
+					      </div>		
+				</div>
+				
+				<div class="col s6">
+					      <div class="card">
+					        <div class="card-image">
+					          <img src="../images/identification-card.png">
+					          <span class="card-title">Codigo de Barras</span>
+					          <a href="#automatico" class="btn-floating halfway-fab waves-effect waves-light deep-orange"><i class="material-icons">view_week</i></a>
+					        </div>
+					        <div class="card-content">
+					          <p>Lectura a traves del codigo de barras del carnet.</p>
+					        </div>
+					      </div>	
+				</div>
+			    
+			  </div>
+		</div>
+
+		<div class="row">
+			<br><br><br>
+			<div class="col s6">
+				<a href="../index.html" class="btn waves-effect waves-light blue-grey lighten-1">Regresar
+					<i class="material-icons right">store</i>
+				</a>
+			</div>
+		</div>
+
+		  <!-- Modal Structure -->
+		  <div id="manual" class="modal">
+		    <div class="modal-content">
+		      <h4 style="text-align: center;">Acceso Manual</h4>
+		      <div class="row">
+		        <div class="input-field col s6">
+		          <i class="material-icons prefix">dialpad</i>
+		          <input id="icon_prefix" type="text" class="validate">
+		          <label for="icon_prefix">Cedula </label>
+		        </div>
+		    </div>
+		    <div class="modal-footer">
+		    	<a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Atras</a>
+		      	<a href="accesoFinal.html" class=" modal-action modal-close waves-effect waves-green btn-flat">Verificar</a>
+		    </div>
+		  </div>
+		</div>
+
+
+		  <!-- Modal Structure -->
+		  <div id="automatico" class="modal">
+		    <div class="modal-content">
+		      <h4 style="text-align: center;">Lectura de Codigo</h4>
+		      <br><br>
+		      <img src="../images/barras1.gif" style="display:block;margin:0 auto 0 auto;">
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Atras</a>
+		      <a href="accesoFinal.html" class=" modal-action modal-close waves-effect waves-green btn-flat">Verificar</a>
+		    </div>
+		  </div>
+				
+	<span>
+		<footer>
+	        <p>&copy; 2017 UNEG. Proyecto / Ingenieria de Software I. </p>
+	    </footer>
+	</span>	
+
+    <script src="../jquery/jquery.min.js"></script>
+    <script src="../jquery/acceso.js"></script>
+    <script src="../js/materialize.min.js"></script>
+
+    </body>
+ 
+  </html>
