@@ -10,6 +10,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
 <link rel="import" href="shared-styles.html">
 
 <dom-module id="my-admin">
@@ -17,24 +20,39 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <style include="shared-styles">
       :host {
         display: block;
+        margin-left: 8em;
+        margin-top: 2em;
 
-        padding: 10px;
       }
+        .contenido{
+            margin-bottom: 5em;
+        }
+        paper-input, paper-dropdown-menu{
+            width: 70%;
+        }
     </style>
 
-    <div class="card">
+    <div class="contenido">
       <h1>Puerta</h1>
-      <paper-input label="Número de puerta" type="number"></paper-input>
+      <paper-input label="Número de puerta" min="1" max="8" type="number"></paper-input>
       <paper-input label="Pasillo al que pertenece" type="number"></paper-input>
-      <paper-input label="Piso al que pertenece" type="number"></paper-input>
+      <paper-input label="Piso al que pertenece" min="1" max="8" type="number"></paper-input>
     </div> 
-     <div class="card">
+     <div class="contenido">
       <h1>Pasillo</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
+      <paper-input label="Piso al que pertenece" min="1" max="8" type="number"></paper-input>
+      <paper-input label="Cantidad de salones" min="1" max="8" type="number"></paper-input>
     </div>
-    <div class="card">
+    <div class="contenido">
       <h1>Oficina</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
+      <paper-input label="Piso al que pertenece" min="1" max="8" type="number"></paper-input>
+      <paper-dropdown-menu label="Tipo de oficina">
+        <paper-listbox class="dropdown-content">
+            <paper-item>Administrativa</paper-item>
+            <paper-item>Bomberos</paper-item>
+            <paper-item>Enfermería</paper-item>
+        </paper-listbox>  
+      </paper-dropdown-menu>
     </div>
     
   </template>

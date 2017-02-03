@@ -10,6 +10,8 @@
 <link rel="import" href="../bower_components/iron-pages/iron-pages.html">
 <link rel="import" href="../bower_components/iron-selector/iron-selector.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../bower_components/iron-icons/maps-icons.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/paper-styles/paper-styles.html">
 <link rel="import" href="my-icons.html">
 <link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
@@ -28,13 +30,13 @@
       }
 
       app-header app-toolbar{
-        background-color: var(--paper-pink-500);
+        background-color: var(--paper-cyan-600);
         color: #fff;
         font-family: 'Black Ops One', cursive;
       }
       
       app-toolbar{
-        background-color: var(--paper-deep-purple-500);
+        background-color: var(--paper-yellow-400);
         height: 6em;
         }
       
@@ -44,21 +46,25 @@
       
 
       .drawer-list {
-        margin: 0 20px;
+        margin: 0 0;
+        background-color: var(--paper-grey-500) !important; 
       }
+        :host([opened]) > #contentContainer{
+        background-color: var(--paper-grey-500) !important; 
+        }
 
       .drawer-list a {
         display: block;
-        padding: 0 16px;
+        padding: 0 2em;
         text-decoration: none;
         color: var(--app-secondary-color);
-        line-height: 40px;
+        line-height: 3em;
       }
 
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
-        background-color: var(--paper-grey-200);      
+        background-color: var(--paper-grey-400);      
         }
       .img-logo{
           margin-left: 30%;
@@ -77,9 +83,9 @@
       <app-drawer id="drawer" class="menu">
         <app-toolbar><img class="img-logo" width="80em" height="80em" src="../images/logo.png"></app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="admin" href="/admin">Administrador</a>
-          <a name="setting" href="/setting">Configuración</a>
-          <a name="report" href="/report">Reportes</a>
+          <a name="admin" href="/admin"><iron-icon icon="icons:face"></iron-icon> Administrador</a>
+          <a name="setting" href="/setting"><iron-icon icon="icons:settings"></iron-icon> Configuración</a>
+          <a name="report" href="/report"><iron-icon icon="icons:lock"></iron-icon> Reportes</a>
         </iron-selector>
       </app-drawer>
 
