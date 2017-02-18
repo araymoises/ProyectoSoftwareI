@@ -4,6 +4,7 @@ var Schema = mongoose.Schema;
 
 var bloqueModel = new Schema ({
   "dia"    :String,
+  "puerta" :String,
   "inicioH":Date,
   "finalH" :Date
 });

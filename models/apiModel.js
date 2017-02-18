@@ -3,7 +3,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var apiModel = new Schema ({
-  "id"   :String,
+  "_id"   :{ type: String,
+            index: true,
+            required:true
+          },
   "title":String
 });
 
