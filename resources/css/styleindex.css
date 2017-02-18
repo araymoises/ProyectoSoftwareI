@@ -52,3 +52,24 @@ body{
 	display:block;
 	margin:0 auto 0 auto;
 }
+
+.description{
+  text-align: center;
+  font-family: georgia;
+  font-style: italic;
+  font-size: 26px;
+  color: #FFFFFF; 
+  /* font-family: arial black; */
+}
+
+.redesSociales{
+  max-width: 27%;
+  display:block;
+  margin:0 auto 0 auto; 
+}
+
+.logoUNEG{
+  max-width: 55%;
+  display:block;
+  margin:0 auto 0 auto; 
+}
