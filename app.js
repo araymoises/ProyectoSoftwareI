@@ -23,7 +23,7 @@ app.set('views', path.join(__dirname, 'resources'));
 
 app.use('/api', apiRouter);
 
-app.use('/', function(req,res){
+app.use('/', function(req,res){/*
   PythonShell.run('blink.py', function (err) {
     if (err){
       console.log(err);
@@ -31,7 +31,7 @@ app.use('/', function(req,res){
     else {
       console.log('finished');
     }
-  });
+  });*/
   res.render('index',{
     world:'Mundo'
   });
