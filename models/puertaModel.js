@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var puertaModel = new Schema ({
-  "id"     :String,
+  "_id"    :String,
   "persona":String,
   "hora"   :String,
   "tipo_ES":Boolean

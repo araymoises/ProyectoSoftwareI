@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var personaModel = new Schema ({
-  "id"         :String,
+  "_id"        :String,
   "cedula"     :String,
   "nombre"     :String,
   "apellido"   :String,

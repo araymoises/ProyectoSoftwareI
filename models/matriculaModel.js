@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var matriculaModel = new Schema ({
-  "id"     :String,
+  "_id"    :String,
   "materia":String,
   "persona":String
 });

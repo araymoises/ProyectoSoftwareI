@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var lapsoModel = new Schema ({
-  "id"     :String,
+  "_id"    :String,
   "periodo":String,
   "materia":String,
   "seccion":Number
