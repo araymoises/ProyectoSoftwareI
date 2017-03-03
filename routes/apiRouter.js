@@ -6,9 +6,7 @@ apiRouter.route('/')
   .get(apiController.get)
   .post(apiController.add);
 
-apiRouter.route('/id=:id')
-  .put(apiController.update)
-  .get(apiController.getById)
-  .delete(apiController.del);
+apiRouter.route('/:id')
+  .get(apiController.getById);
 
 module.exports = apiRouter;

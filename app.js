@@ -20,8 +20,8 @@ app.use((req, res, next)=>{
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'resources'));
 
-
 app.use('/api', apiRouter);
+// app.use('/id=', apiRouter);
 
 app.use('/', function(req,res){/*
   PythonShell.run('blink.py', function (err) {
