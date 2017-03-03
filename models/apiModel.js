@@ -7,8 +7,7 @@ var apiModel = new Schema ({
             index: true,
             required:true
           },
-  "title":{ type: String,
-            required:true
+  "title":{ type: String
           },
 });
 

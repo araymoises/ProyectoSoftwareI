@@ -72,14 +72,14 @@ var del = function(req, res){
   };
 
   var getById = function(req, res){
-    Api.findById(req.params.id, function(err, api){
+    Api.findById(req.params.id, function(err, doc){
       if(err){
         res.status(500);
         res.send("No encontrado.");
       }
       else{
         res.status(200);
-        res.send(util.inspect(api, {showHidden: false, depth: null}));
+        res.send(doc);
       }
     });
   };
