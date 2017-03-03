@@ -1,4 +1,4 @@
-var mongoose = require('mongoose');
+/*var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
 
@@ -10,3 +10,4 @@ var lapsoModel = new Schema ({
 });
 
 module.exports = mongoose.model("Lapso", lapsoModel);
+*/
