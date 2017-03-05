@@ -1,5 +1,5 @@
 var Api = require('./../models/apiModel');
-const util = require('util')
+const util = require('util');
 
 var get = function(req, res){
   Api.find(function(err, Api){
