@@ -10,7 +10,16 @@ var materiaModel = new Schema ({
   "nombre"  :{ type: String,
              required:true
            },
-  "semestre":{ type: String,
+  "seccion" :[{"_id"     : String,
+               "docente" : String,
+               "horario" : [{
+                              "h_Entrada" : Date,
+                              "h_Salida"  : Date,
+                              "dia"       : Number,
+                              "aula"      : String
+                            }]
+             }],
+  "nivel":{ type: String,
             required:true
           }
 });
