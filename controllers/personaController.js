@@ -2,16 +2,17 @@ var model   =   require('./../models/personaModel');
 const util = require('util');
 
 /* Mostrar todos las personas guardadas */
-var get =   function(req,res){
-    model.find(function(err,api){
-        if (err){
-            res.status(500);
-            res.send("Error del servidor.");
-        }else{
-            res.status(200);
-            res.send(api);
-        }
-    });
+var get = function(req, res){
+  model.find(function(err, api){
+    if(err){
+      res.status(500);
+      res.send("Error del servidor.");
+    }
+    else{
+      res.status(200);
+      res.send(api);
+    }
+  });
 };
 
 /* Agregar una nueva persona en los registros */
@@ -80,4 +81,12 @@ var del =   function(req,res){
             });
         }
     });
+};
+
+module.exports = {
+  add:add,
+  get:get,
+  del:del,
+  update:update,
+  getById:getById
 };

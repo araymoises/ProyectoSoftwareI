@@ -1,6 +1,7 @@
 var express =  require ('express');
 var apiRouter =  require ('./routes/apiRouter');
 var materiaRouter =  require ('./routes/materiaRouter');
+var personaRouter =  require ('./routes/personaRouter');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -24,6 +25,7 @@ app.set('views', path.join(__dirname, 'resources'));
 
 app.use('/api', apiRouter);
 app.use('/materia', materiaRouter);
+app.use('/persona', personaRouter);
 // app.use('/id=', apiRouter);
 
 app.use('/', function(req,res){/*
