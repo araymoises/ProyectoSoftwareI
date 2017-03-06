@@ -29,7 +29,7 @@
 -----*Cómo usar la API REST:*-----
 
 | Ruta | Metodo | Despcrición |
-| --- | --- | --- |
+| :---: | --- | --- |
 | /api | GET | Devuelve todo lo contenido en la "tabla" api. |
 | /api/ | POST | Inserta una nueva tupla en la api. |
 | /api/id=dfdsfdsfsdfcdsf | GET | Devuelve la "tupla" en donde se encuentra tal id. |
