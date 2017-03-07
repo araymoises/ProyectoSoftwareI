@@ -73,3 +73,11 @@ var getById =   function(req,res){
         }
     });
 };
+
+module.exports = {
+  add:add,
+  get:get,
+  del:del,
+  update:update,
+  getById:getById
+};
