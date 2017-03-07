@@ -27,28 +27,12 @@ var add =   function(req,res){
         O con solo ejecutar el bloque del if estando el usuario en la bd se agregado solo los campos de la materia?
     */
     var item    =   getById(req,res);
-    if (item == false){
+    var agg =   new model(req.body);;
+    if (item != false){
         /* si la persona no existe en la matricula se agrega con una materia */
-        var addMatricula    =   new Matricula ({
-            _id:        req.body._id,
-            materia:    [{
-                _id:        req.body._id,
-                seccion:    req.body.seccion
-            }],
-            persona:    req.body.persona
-
-        })
-    }else{
-        /* si la persona existe, solo se agrega la materia */
-        var addMatricula    =   new Matricula ({
-            materia:    [{
-                _id:        req.body._id,
-                seccion:    req.body.seccion
-            }]
-
-        })
+        agg.materia.push({_id: req.body._id, seccion: req.body.seccion})
     }
-    addMatricula.save(function(err){
+    agg.save(function(err){
         if (err){
             res.status(500);
             res.send(false);
