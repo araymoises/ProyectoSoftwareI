@@ -73,6 +73,25 @@ var getById =   function(req,res){
         }
     });
 };
+/* Eliminar una persona por el ID */
+var del =   function(req,res){
+    model.findById(req.params.id, function(err,api){
+        if (err){
+            res.status(500);
+            res.send("Error.");
+        }else{
+            api.remove(function(err){
+                if (err){
+                    res.status(500);
+                    res.send("Error al eliminar.");
+                }else{
+                    res.status(200);
+                    res.send("Eliminado.");
+                }
+            });
+        }
+    });
+};
 
 module.exports = {
   add:add,
