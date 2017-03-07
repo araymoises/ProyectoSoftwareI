@@ -29,7 +29,7 @@ var add =   function(req,res){
     var item    =   getById(req,res);
     var agg =   new model(req.body);;
     if (item != false){
-        /* si la persona no existe en la matricula se agrega con una materia */
+        /* si la persona existe en la matricula se agrega la materia materia */
         agg.materia.push({_id: req.body._id, seccion: req.body.seccion})
     }
     agg.save(function(err){
