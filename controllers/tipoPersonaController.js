@@ -1,4 +1,4 @@
-var Api = require('./../models/puertaModel');
+var Api = require('./../models/tipoPersonaModel');
 const util = require('util');
 
 var get = function(req, res){
