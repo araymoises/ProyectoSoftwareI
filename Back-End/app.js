@@ -3,6 +3,7 @@ var apiRouter =  require ('./routes/apiRouter');
 var materiaRouter =  require ('./routes/materiaRouter');
 var personaRouter =  require ('./routes/personaRouter');
 var adminRouter =  require ('./routes/adminRouter');
+var accesoRouter =  require ('./routes/accesoRouter');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var path = require('path');
@@ -28,6 +29,7 @@ app.use('/api', apiRouter);
 app.use('/materia', materiaRouter);
 app.use('/persona', personaRouter);
 app.use('/admin', adminRouter);
+app.use('/acceso', accesoRouter);
 // app.use('/id=', apiRouter);
 
 app.use('/', function(req,res){/*

@@ -9,7 +9,7 @@ var personaModel = new Schema ({
   "apellido"    :String,
   "sexo"        :Boolean,
   "foto"        :String,
-  "tipo_P"      :[String],
+  "tipoPersona" :[String],
   "status"      :Boolean
 });
 

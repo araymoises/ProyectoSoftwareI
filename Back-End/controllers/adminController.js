@@ -1,4 +1,4 @@
-var Api = require('./../models/apiModel');
+var Api = require('./../models/adminModel');
 const util = require('util');
 
 
@@ -52,8 +52,17 @@ var del = function(req, res){
 
 var update = function(req, res){
   var conditions = {_id: req.params.id},
-  update = {title: "hhlsadasd"},
   options = { multi: true };
+  var update = new Object();
+  if(req.body.nombre)
+    update.nombre = req.body.nombre;
+  if(req.body.apellido)
+    update.apellido = req.body.apellido;
+  if(req.body.username)
+    update.username = req.body.username;
+  if(req.body.password)
+    update.password = req.body.password;
+
   Api.update(conditions, update, options, function(err,api){
     if(err){
       res.status(500);
@@ -73,7 +82,10 @@ var getById = function(req, res){
     }
     else{
       res.status(200);
-      res.send(doc);
+      if(doc._id == req.params.id)
+        res.send(true);
+      else
+        res.send(false);
     }
   });
 };

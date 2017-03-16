@@ -1,42 +1,53 @@
-var Api = require('./../models/adminModel');
+var Acceso = require('./../models/accesoModel');
+var Matricula = require('./../models/matriculaModel');
+var Materia = require('./../models/materiaModel');
+var Persona = require('./../models/personaModel');
 const util = require('util');
 
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      return false;
+    }
+  }
+  return true;
+}
 
 var get = function(req, res){
-  Api.find(function(err, Api){
+  Acceso.find(function(err, acceso){
     if(err){
       res.status(500);
       res.send("Error del servidor.");
     }
     else{
       res.status(200);
-      res.send(Api);
+      res.send(acceso);
     }
   });
 };
 
 var add = function(req, res){
-  var api = new Api(req.body);
-  api.save(function(err){
+  var persona = new Persona(req.body);
+  persona.save(function(err){
     if(err){
       res.status(500);
       res.send("Error al añadir.");
     }
     else{
       res.status(200);
-      res.send(api);
-    }
+      res.send(persona);
+   }
   });
 };
 
 var del = function(req, res){
-  Api.findById(req.params.id,function(err,api){
+  Acceso.findById(req.params.id,function(err,acceso){
     if(err){
       res.status(500);
       res.send("Error.");
     }
     else{
-      api.remove(function(err){
+      acceso.remove(function(err){
         if(err){
           res.status(500);
           res.send("Error al añadir.");
@@ -62,8 +73,8 @@ var update = function(req, res){
     update.username = req.body.username;
   if(req.body.password)
     update.password = req.body.password;
-    
-  Api.update(conditions, update, options, function(err,api){
+
+  Acceso.update(conditions, update, options, function(err,acceso){
     if(err){
       res.status(500);
       res.send("Error de actualización.");
@@ -73,10 +84,10 @@ var update = function(req, res){
     }
   });
 };
-
+//Matrícula - Materia - Acceso.
 var getById = function(req, res){
-  Api.findById(req.params.id, function(err, doc){
-    if(err){
+  Matricula.find({persona: req.params.id}, function(err, doc){
+    if(isEmpty(doc)){
       res.status(500);
       res.send("No encontrado.");
     }

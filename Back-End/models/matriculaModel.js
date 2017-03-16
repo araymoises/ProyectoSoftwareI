@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 
 
 var matriculaModel = new Schema ({
-  "_id"     :String,                /* id del esque matricula */
+  "_id"     :String,                /* id del esquema matricula */
   "materia" :[{ "_id":String,       /* identificador de la materia el cual proviene del M. materia*/
                 "seccion":Number    /* id de la seccion, con eso podemos saber el docente */
              }],
