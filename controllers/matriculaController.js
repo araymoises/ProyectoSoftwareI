@@ -1,7 +1,7 @@
-var model   =   require('./../models/personaModel');
+var model   =   require('./../models/matriculaModel');
 const util = require('util');
 
-/* mostrar todas las puertas */
+
 var get = function(req, res){
   model.find(function(err, api){
     if(err){
@@ -18,29 +18,17 @@ var get = function(req, res){
 /* Agregar una nueva persona a la matricula  */
 var add =   function(req,res){
 
-    /* primero buscamos si la persona existe en la matriculas*/
-    /*  aqui me enredé, que pasa si el usuario ya está en la matrícula
-        por eso hice la consulta de item para saber eso, pero lo que me confunde viendo ese codigo
-        que hice en la parte del else, como hago solamente para seleccionar el alumno deseado
-        y solamentemente insertar en los campos materia.
-
-        O con solo ejecutar el bloque del if estando el usuario en la bd se agregado solo los campos de la materia?
-    */
-    var item    =   getById(req,res);
-    var agg =   new model(req.body);;
-    if (item != false){
-        /* si la persona existe en la matricula se agrega la materia materia */
-        agg.materia.push({_id: req.body._id, seccion: req.body.seccion})
+  var api = new model(req.body);
+  api.save(function(err){
+    if(err){
+      res.status(500);
+      res.send("Error al añadir.");
     }
-    agg.save(function(err){
-        if (err){
-            res.status(500);
-            res.send(false);
-        }else{
-            res.status(200);
-            res.send(addMatricula);
-        }
-    });
+    else{
+      res.status(200);
+      res.send(api);
+    }
+  });
 
 
 };
