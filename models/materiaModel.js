@@ -13,8 +13,8 @@ var materiaModel = new Schema ({
   "seccion" :[{"_id"     : String,
                "docente" : String,
                "horario" : [{
-                              "h_Entrada" : Date,
-                              "h_Salida"  : Date,
+                              "h_Entrada" : String,
+                              "h_Salida"  : String,
                               "dia"       : Number,
                               "aula"      : String
                             }]

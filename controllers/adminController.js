@@ -1,6 +1,14 @@
 var Api = require('./../models/adminModel');
 const util = require('util');
 
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      return false;
+    }
+  }
+  return true;
+};
 
 var get = function(req, res){
   Api.find(function(err, Api){
@@ -69,23 +77,20 @@ var update = function(req, res){
       res.send("Error de actualización.");
     }
     else{
-      res.send("¡La actualización de ha realizado exitosamente!");
+      res.send("¡La actualización se ha realizado exitosamente!");
     }
   });
 };
 
 var getById = function(req, res){
-  Api.findById(req.params.id, function(err, doc){
-    if(err){
-      res.status(500);
-      res.send("No encontrado.");
+  Api.findOne({cedula: req.params.id}, function(err, doc){
+    if(isEmpty(doc)){
+      res.status(200);
+      res.send(false);
     }
     else{
       res.status(200);
-      if(doc._id == req.params.id)
-        res.send(true);
-      else
-        res.send(false);
+        res.send(doc);
     }
   });
 };

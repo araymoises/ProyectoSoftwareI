@@ -1,6 +1,12 @@
 var Acceso = require('./../models/accesoModel');
 var Matricula = require('./../models/matriculaModel');
 var Materia = require('./../models/materiaModel');
+
+var Persona = require('./../models/personaModel');
+var Persona = require('./../models/personaModel');
+var Persona = require('./../models/personaModel');
+var Persona = require('./../models/personaModel');
+var Persona = require('./../models/personaModel');
 var Persona = require('./../models/personaModel');
 const util = require('util');
 
@@ -11,81 +17,37 @@ function isEmpty(obj) {
     }
   }
   return true;
-}
+};
 
 var get = function(req, res){
-  Acceso.find(function(err, acceso){
+  Matricula.find(function(err, matricula){
     if(err){
       res.status(500);
       res.send("Error del servidor.");
     }
     else{
       res.status(200);
-      res.send(acceso);
+      res.send("matricula");
     }
   });
 };
 
 var add = function(req, res){
-  var persona = new Persona(req.body);
-  persona.save(function(err){
+  var materia = new Materia(req.body);
+  materia.save(function(err){
     if(err){
       res.status(500);
       res.send("Error al añadir.");
     }
     else{
       res.status(200);
-      res.send(persona);
+      res.send(materia);
    }
   });
 };
 
-var del = function(req, res){
-  Acceso.findById(req.params.id,function(err,acceso){
-    if(err){
-      res.status(500);
-      res.send("Error.");
-    }
-    else{
-      acceso.remove(function(err){
-        if(err){
-          res.status(500);
-          res.send("Error al añadir.");
-        }
-        else{
-          res.status(200);
-          res.send("Eliminado.");
-        }
-      });
-    }
-  });
-};
-
-var update = function(req, res){
-  var conditions = {_id: req.params.id},
-  options = { multi: true };
-  var update = new Object();
-  if(req.body.nombre)
-    update.nombre = req.body.nombre;
-  if(req.body.apellido)
-    update.apellido = req.body.apellido;
-  if(req.body.username)
-    update.username = req.body.username;
-  if(req.body.password)
-    update.password = req.body.password;
-
-  Acceso.update(conditions, update, options, function(err,acceso){
-    if(err){
-      res.status(500);
-      res.send("Error de actualización.");
-    }
-    else{
-      res.send("¡La actualización de ha realizado exitosamente!");
-    }
-  });
-};
 //Matrícula - Materia - Acceso.
-var getById = function(req, res){
+var check = function(req, res){
   Matricula.find({persona: req.params.id}, function(err, doc){
     if(isEmpty(doc)){
       res.status(500);
@@ -99,9 +61,6 @@ var getById = function(req, res){
 };
 
 module.exports = {
-  add:add,
-  get:get,
-  del:del,
-  update:update,
-  getById:getById
+  add  :add,
+  check:check
 };

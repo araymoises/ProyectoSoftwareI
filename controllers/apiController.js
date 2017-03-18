@@ -1,6 +1,14 @@
 var Api = require('./../models/apiModel');
 const util = require('util');
 
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      return false;
+    }
+  }
+  return true;
+};
 
 var get = function(req, res){
   Api.find(function(err, Api){
@@ -51,29 +59,45 @@ var del = function(req, res){
 };
 
 var update = function(req, res){
-  var conditions = {_id: req.params.id},
-  update = {title: "hhlsadasd"},
-  options = { multi: true };
-  Api.update(conditions, update, options, function(err,api){
-    if(err){
-      res.status(500);
-      res.send("Error de actualización.");
+
+  Api.findById(req.params.id, function(err, doc){
+    if(isEmpty(doc)){
+      res.status(200);
+      res.send("Error: No encontrado.");
     }
     else{
-      res.send("¡La actualización de ha realizado exitosamente!");
+      var conditions = {_id: req.params.id},
+      update = {title: req.body.title},
+      options = { multi: true };
+      Api.update(conditions, update, options, function(err,api){
+        if(err){
+          res.status(200);
+          res.send(err);
+        }
+        else{
+          res.send(api);
+        }
+      });
     }
   });
 };
-
+var aceptado = {
+  aceptado: true,
+  mensaje: "¡Ha podido accesar exitosamente!"
+}
+var rechazado = {
+  aceptado: false,
+  mensaje: "Lamentablemente, no ha podido accesar."
+}
 var getById = function(req, res){
   Api.findById(req.params.id, function(err, doc){
-    if(!(doc.id == req.params.id)){
-      res.status(500);
-      res.send("No encontrado.");
+    if(isEmpty(doc)){
+      res.status(200);
+      res.send(rechazado);
     }
     else{
       res.status(200);
-      res.send("Todo calidad");
+      res.send(aceptado);
     }
   });
 };
